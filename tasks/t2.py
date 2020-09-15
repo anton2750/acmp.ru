@@ -1,4 +1,3 @@
 n = int(input())
-a = abs(n)
-s = int((1 + a) / 2 * a)
+s = int((1 + abs(n)) / 2 * abs(n))
 print(s if n > 0 else 1 - s)
