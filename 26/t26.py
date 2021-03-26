@@ -38,7 +38,7 @@ def main(A, B):
 
 
 with open("../tasks/output.txt", "w") as g:
-    with open("../tasks/input.txt", "r") as f:
+    with open("../tasks/input.txt.txt", "r") as f:
         A = list(map(int, f.readline().split()))
         B = list(map(int, f.readline().split()))
         g.write(str(main(A, B)))

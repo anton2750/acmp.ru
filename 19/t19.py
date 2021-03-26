@@ -88,5 +88,5 @@ def main(p):
 
 
 with open("../tasks/output.txt", "w") as g:
-    with open("../tasks/input.txt", "r") as f:
+    with open("../tasks/input.txt.txt", "r") as f:
         g.write(str(main(list(f.readline().split()))))

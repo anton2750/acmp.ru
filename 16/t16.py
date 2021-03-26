@@ -1,6 +1,6 @@
 import math
 
-f_input = open('../tasks/input.txt', 'r')
+f_input = open('../tasks/input.txt.txt', 'r')
 f_output = open("../tasks/output.txt", 'w')
 
 min_limit_dict = {}

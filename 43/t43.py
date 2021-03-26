@@ -1,4 +1,4 @@
-with open("../tasks/input.txt", "r") as file1:
+with open("../tasks/input.txt.txt", "r") as file1:
     string = file1.readline()
     max_l = 0
     temp_l = 0
