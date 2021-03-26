@@ -1,6 +1,3 @@
-T = 0
-
-
 def I(v):
     X, Y, X1, Y1, X2, Y2, X3, Y3, X4, Y4 = v
 
@@ -20,6 +17,7 @@ def I(v):
     D = t(X, Y, X4, Y4, X1, Y1)
     E = t(X1, Y1, X2, Y2, X4, Y4)
     F = t(X2, Y2, X3, Y3, X4, Y4)
+
     if round((A + B + C + D)) == round(E + F):
         return 1
     return 0
@@ -44,15 +42,21 @@ def L(v):
     return 0
 
 
-def m(v):
+def M(v):
     if L(v) or I(v):
         return 1
     return 0
 
 
-with open("../tasks/input.txt", "r") as f:
-    n = int(f.readline())
-    for i in range(n):
-        T += m(list(map(int, f.readline().split())))
-with open("../tasks/output.txt", "w") as o:
-    o.write(str(T))
+def main():
+    t = 0
+    with open("input.txt", "r") as f:
+        n = int(f.readline())
+        for i in range(n):
+            t += M(list(map(int, f.readline().split())))
+    with open("output.txt", "w") as o:
+        o.write(str(t))
+
+
+if __name__ == "__main__":
+    main()
