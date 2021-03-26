@@ -50,9 +50,9 @@ def m(v):
     return 0
 
 
-with open("input.txt", "r") as f:
+with open("../tasks/input.txt", "r") as f:
     n = int(f.readline())
     for i in range(n):
         T += m(list(map(int, f.readline().split())))
-with open("output.txt", "w") as o:
+with open("../tasks/output.txt", "w") as o:
     o.write(str(T))

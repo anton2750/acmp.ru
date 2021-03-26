@@ -87,6 +87,6 @@ def main(p):
     return my_count(chess_map)
 
 
-with open("output.txt", "w") as g:
-    with open("input.txt", "r") as f:
+with open("../tasks/output.txt", "w") as g:
+    with open("../tasks/input.txt", "r") as f:
         g.write(str(main(list(f.readline().split()))))

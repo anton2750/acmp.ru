@@ -1,5 +1,5 @@
-with open("output.txt", "w") as o:
-    with open("input.txt", "r") as f:
+with open("../tasks/output.txt", "w") as o:
+    with open("../tasks/input.txt", "r") as f:
         N = int(f.read())
         B = str(bin(N))
         print(N, B)

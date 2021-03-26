@@ -37,8 +37,8 @@ def main(A, B):
     return "NO"
 
 
-with open("output.txt", "w") as g:
-    with open("input.txt", "r") as f:
+with open("../tasks/output.txt", "w") as g:
+    with open("../tasks/input.txt", "r") as f:
         A = list(map(int, f.readline().split()))
         B = list(map(int, f.readline().split()))
         g.write(str(main(A, B)))

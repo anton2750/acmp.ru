@@ -1,7 +1,7 @@
 import math
 
-f_input = open('input.txt', 'r')
-f_output = open("output.txt", 'w')
+f_input = open('../tasks/input.txt', 'r')
+f_output = open("../tasks/output.txt", 'w')
 
 min_limit_dict = {}
 general_dict = {}

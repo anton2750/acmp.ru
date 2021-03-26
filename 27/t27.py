@@ -36,8 +36,8 @@ def add_points(p):
     pass
 
 
-with open("output.txt", "w") as g:
-    with open("input.txt", "r") as f:
+with open("../tasks/output.txt", "w") as g:
+    with open("../tasks/input.txt", "r") as f:
         w, h = list(map(int, f.readline().split()))
         n = int(f.readline())
         total = w * h
