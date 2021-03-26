@@ -6,15 +6,13 @@ def main():
         f.readline()  # just read a line
         values = list(map(int, f.readline().split()))
         for v in values:
-            if v % 2 == 0:
-                e.append(v)
-            else:
-                o.append(v)
+            e.append(v) if v % 2 == 0 else o.append(v)
 
     with open("output.txt", "w") as g:
-        g.writelines([' '.join(str(i) for i in o), "\n"])
-        g.writelines([' '.join(str(i) for i in e), "\n"])
-        g.write('YES') if len(e) >= len(o) else g.write('NO')
+        g.write('\n'.join([
+            ' '.join(str(i) for i in o),
+            ' '.join(str(i) for i in e),
+            'YES' if len(e) >= len(o) else 'NO']))
 
 
 if __name__ == "__main__":
