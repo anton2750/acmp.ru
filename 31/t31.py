@@ -8,11 +8,11 @@ def main():
                     yield perm[:i] + elements[0:1] + perm[i:]
 
     def counter(r):
-        test = 0
+        c = 0
         for i in range(len(r)):
             if r[i] == i + 1:
-                test += 1
-        return 1 if test == k else 0
+                c += 1
+        return 1 if c == k else 0
 
     with open("input.txt", "r") as f:
         n, k = list(map(int, f.readline().split()))
