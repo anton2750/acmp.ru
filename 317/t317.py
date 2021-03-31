@@ -1,30 +1,16 @@
-def main():
-    r = set()
+with open("input.txt", "r") as f:
+    x, y, z, w = list(map(int, f.readline().split()))
 
-    def sum(s, a):
-        if s == 0:
-            temp = [0] * 3
-            for i in a:
-                temp[d[i]] += 1
-            r.add(str(temp))
-            pass
+r = 0
 
-        for i in [x, y, z]:
-            if ((s - i) % x == 0 or (s - i) % y == 0 or (s - i) % z == 0) and s >= i:
-                sum(s - i, a + [i])
-        pass
+for i in range(w // x + 1):  # x
+    for j in range((w - i * x) // y + 1):  # y
+        k = (w - x * i - y * j) / z
+        if k % 1 == 0 and w // z >= k >= 0:
+            r += 1
+            # print((i, j, k))
 
-    with open("input.txt", "r") as f:
-        x, y, z, w = list(map(int, f.readline().split()))
+print(r)
 
-    sum(w, [])
-    # for i in r:
-    #     print(i)
-
-    # print(len(r))
-    with open("output.txt", "w") as g:
-        g.write(str(len(r)))
-
-
-if __name__ == "__main__":
-    main()
+with open("output.txt", "w") as g:
+    g.write(str(r))
