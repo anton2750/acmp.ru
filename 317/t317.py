@@ -17,12 +17,11 @@ def main():
     with open("input.txt", "r") as f:
         x, y, z, w = list(map(int, f.readline().split()))
 
-    d = {x: 0, y: 1, z: 2}
     sum(w, [])
-    for i in r:
-        print(i)
+    # for i in r:
+    #     print(i)
 
-    print(len(r))
+    # print(len(r))
     with open("output.txt", "w") as g:
         g.write(str(len(r)))
 
