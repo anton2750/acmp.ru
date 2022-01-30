@@ -1,10 +1,10 @@
 with open("input.txt", "r") as f:
     with open("output.txt", "w") as o:
-        [m1, m2, m3] = list(map(int, f.readline().split()))
-        # 94, 727
-        if any(x < 94 for x in [m1, m2, m3]):
+        m = list(map(int, f.readline().split()))
+
+        if any(x < 94 for x in m):
             o.write('Error')
-        elif any(x > 727 for x in [m1, m2, m3]):
+        elif any(x > 727 for x in m):
             o.write('Error')
         else:
-            o.write(f"{max([m1, m2, m3])}")
+            o.write(f"{max(m)}")
