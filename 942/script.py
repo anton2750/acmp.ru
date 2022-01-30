@@ -1,47 +1,31 @@
 with open("input.txt", "r") as f:
     with open("output.txt", "w") as o:
+        f.readline()  # overall count, not used, skipping
+        tasks = list(map(int, f.readline().split()))
 
-        # init:
-        c = int(f.readline())
-        m = list(map(int, f.readline().split()))
+        orders = {1: sorted(tasks), 3: tasks[::-1], 5: tasks}
+        timers = {1: 0, 3: 0, 5: 0}
 
-        timer = {1: 0, 3: 0, 5: 0}
+        for student in timers.keys():
+            fine = 0
+            counter = 0
+            for t in orders[student]:
+                counter += t
+                fine += counter
+            timers[student] = fine
 
-        # student 5:
-        fine = 0
-        counter = 0
-        for t in m:
-            counter += t
-            fine += counter
-        timer[5] = fine
-
-        # student 3:
-        fine = 0
-        counter = 0
-        for t in m[::-1]:
-            counter += t
-            fine += counter
-        timer[3] = fine
-
-        # student 1:
-        m.sort()
-        fine = 0
-        counter = 0
-        for t in m:
-            counter += t
-            fine += counter
-        timer[1] = fine
+        # print(tasks)
+        # print(orders)
+        # print(timers)
 
         # evaluation:
-        n = 1
-        c = timer[n]
+        winner = 1
+        result = timers[winner]
 
-        if timer[3] < c:
-            n = 3
-            c = timer[3]
+        for student, time in timers.items():
+            if time < result:
+                winner = student
+                result = time
 
-        if timer[5] < c:
-            n = 5
-            c = timer[5]
-
-        o.write(f"{n}")
+        # print(winner)
+        o.write(f"{winner}")
