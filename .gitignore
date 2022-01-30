@@ -1,1 +1,10 @@
+# JetBrain:
 .idea
+
+
+# Mac OS General:
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
