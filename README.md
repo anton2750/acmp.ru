@@ -13,7 +13,7 @@ with open("input.txt", "r") as f:
         o.write(f'{a} {b} {c}')
 ```
 
-One variable:
+One variable - integer:
 
 ```
 with open("input.txt", "r") as f:
@@ -22,7 +22,7 @@ with open("input.txt", "r") as f:
         o.write(f'{a}')
 ```
 
-Two lines - two string:
+Two lines - two strings:
 
 ```
 with open("input.txt", "r") as f:
