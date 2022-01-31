@@ -21,3 +21,14 @@ with open("input.txt", "r") as f:
         a = int(f.readline())
         o.write(f'{a}')
 ```
+
+Two lines - two string:
+
+```
+with open("input.txt", "r") as f:
+    with open("output.txt", "w") as o:
+        a = f.readline().strip()
+        b = f.readline().strip()
+        o.write(f'{a}')
+        o.write(f'{b}')
+```
