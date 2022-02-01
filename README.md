@@ -32,3 +32,10 @@ with open("input.txt", "r") as f:
         o.write(f'{a}')
         o.write(f'{b}')
 ```
+
+One integer variable from/to console:
+
+```
+a = int(input())
+print(a)
+```
