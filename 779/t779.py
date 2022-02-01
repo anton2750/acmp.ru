@@ -1,6 +1,6 @@
 from math import ceil, floor
 
 n = int(input())
-a = tuple(map(int, input().split()))
-r = sum(a) / n
-print(ceil(r) if r >= 0 else floor(r))
+a = list(x + 2 * 10 ** 9 for x in list(map(int, input().split())))
+r = ceil(sum(a) / n)
+print(r - 2 * 10 ** 9)
