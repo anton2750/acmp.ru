@@ -1,4 +1,7 @@
+import time
 import math
+
+start_time = time.time()
 
 # logs pre calcs:
 d = {(k, v): math.log(k, v) for k in range(2, 100) for v in range(2, 100)}
@@ -37,7 +40,11 @@ with open("input.txt", "r") as f:
         # heavy metal:
 
         towers = [Tower(i, list(map(int, f.readline().split()))) for i in range(1, int(f.readline()) + 1)]
-        o.write(' '.join([str(x) for x in sorted(towers)]))
+        result = ' '.join([str(x) for x in sorted(towers)])
+        o.write(result)
+
+        print(result)
+        print("--- %s seconds ---" % (time.time() - start_time))
 
         # print(t)
         # print(d)
