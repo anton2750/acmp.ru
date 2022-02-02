@@ -4,8 +4,8 @@ import math
 start_time = time.time()
 
 # logs pre calcs:
-d = {(k, v): math.log(k, v) for k in range(2, 100) for v in range(2, 100)}
-t = {k: 1 / k for k in range(1, 100)}
+# d = {(k, v): math.log(k, v) for k in range(2, 100) for v in range(2, 100)}
+# t = {k: 1 / k for k in range(1, 100)}
 
 
 class Tower:
