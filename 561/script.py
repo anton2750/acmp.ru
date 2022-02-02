@@ -3,13 +3,14 @@ import math
 
 start_time = time.time()
 
+
 # logs pre calcs:
 # d = {(k, v): math.log(k, v) for k in range(2, 100) for v in range(2, 100)}
 # t = {k: 1 / k for k in range(1, 100)}
 
 
 class Tower:
-    # magic:
+    # magic here:
     def formula(self):
         return str(self.base) + '**' + '**'.join(list(map(str, self.powers)))
 
@@ -37,13 +38,13 @@ class Tower:
 
 with open("input.txt", "r") as f:
     with open("output.txt", "w") as o:
-        # heavy metal:
-
+        # heavy metal load:
         towers = [Tower(i, list(map(int, f.readline().split()))) for i in range(1, int(f.readline()) + 1)]
         result = ' '.join([str(x) for x in sorted(towers)])
-        o.write(result)
 
+        o.write(result)
         print(result)
+
         print("--- %s seconds ---" % (time.time() - start_time))
 
         # print(t)
@@ -53,10 +54,8 @@ with open("input.txt", "r") as f:
         # print(d[(2, 2)])
 
         # map of logs:
-        # c = 0
         # for i in range(2, 100):
         #     o.write(f'log(x, base from 2 to 99) : x={i:2.0f} -> ')
         #     for j in range(2, 100):
-        #         c += 1
         #         o.write(f'{math.log(i, j):.2f} ')
         #     o.write('\n')
