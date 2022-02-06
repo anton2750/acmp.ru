@@ -1,5 +1,6 @@
 import time
 import math
+import random
 
 start_time = time.time()
 
@@ -14,14 +15,21 @@ class Tower:
     def formula(self):
         return str(self.base) + '**' + '**'.join(list(map(str, self.powers)))
 
+    def mpow(self, x):
+        return x[0] if (len(x) == 1) else x[0] ** self.mpow(x[1:])
+
     def __init__(self, i, data):
         self.i = i
         self.exp_count = data[0]
-        self.base = data[1]
-        # self.powers = data[2:] + [1] * (10 - len(data[2:])) # if needed
-        self.powers = data[2:]
 
-        self.value = eval(self.formula())
+        self.base = data[1]
+        self.powers = data[2:] + [1] * (10 - len(data[2:]))
+
+        self.numbers = data[1:]
+
+        # value calculation:
+        # self.value = eval(self.formula())
+        self.value = self.mpow(self.numbers)
 
     def __str__(self):
         return str(self.i)
@@ -31,9 +39,6 @@ class Tower:
 
     def __lt__(self, other):
         return self.value < other.value
-
-    # def value(self):
-    #     return 1
 
 
 with open("input.txt", "r") as f:
