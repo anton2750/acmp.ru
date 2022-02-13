@@ -4,6 +4,12 @@ import random
 
 start_time = time.time()
 
+# USE THIS EQUATION:
+# (1 + x) ** n >= 1 + n * x
+# x > -1, n > 1
+# equation achieve in the case x == 0
+
+
 
 # logs pre calcs:
 # d = {(k, v): math.log(k, v) for k in range(2, 100) for v in range(2, 100)}
