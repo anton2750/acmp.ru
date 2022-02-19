@@ -4,7 +4,7 @@ import random
 
 start_time = time.time()
 
-# USE THIS EQUATION:
+# USE THIS EQUATION (BERNOULLI):
 # (1 + x) ** n >= 1 + n * x
 # x > -1, n > 1
 # equation achieve in the case x == 0
