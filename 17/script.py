@@ -1,3 +1,7 @@
+# case 1: one circle
+# case 2: several circles
+
+
 with open("input.txt", "r") as f:
     with open("output.txt", "w") as o:
         total_length = int(f.readline())
@@ -8,7 +12,6 @@ with open("input.txt", "r") as f:
         circle_length = 1
         circle_iterator = 0
         global_iterator = 0
-        previous = 0
 
         # loop:
         for i in input_numbers:
@@ -22,6 +25,8 @@ with open("input.txt", "r") as f:
                 pass
 
             # suppose it is a new circle:
+            # items must be equal to be first one
+            # circle iterator - 1 must be equal to circle length
             if i == circle[0] and circle_iterator - 1 == circle_length:
                 circle_iterator = 1
             # suppose it is still the first loop:
@@ -31,12 +36,12 @@ with open("input.txt", "r") as f:
                 circle_iterator = global_iterator
 
                 # hot fix:
-                if global_iterator == total_length:
-                    circle_length = total_length - 1
+                # if global_iterator == total_length:
+                #     circle_length = total_length - 1
 
         # hot fix:
-        # if previous != circle_length:
-        #     circle_length = total_length - 1
+        if circle_iterator != 1:
+            circle_length = total_length - 1
 
         o.write(str(circle_length))
         print(circle_length)
