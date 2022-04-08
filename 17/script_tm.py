@@ -1,24 +1,44 @@
+import time
+
+start_time = time.time()
+
+
+# def check(sample, tail):
+#     if not tail:
+#         return True
+#     else:
+#         return sample == tail[0:len(sample)] and check(sample, tail[len(sample):])
+
+
+def check(sample, tail):
+    while tail:
+        if sample != tail[0:len(sample)]:
+            return False
+        else:
+            tail = tail[len(sample):]
+    return True
+
+
 with open("output.txt", "w") as g:
     with open("input.txt", "r") as f:
-        N = int(f.readline())
-        L = list(map(int, f.readline().split()))
+        total = int(f.readline())
+        numbers = list(map(int, f.readline().split()))
 
-        last_index = 0
-        while True:
-            last_index = L.index(L[0], last_index + 1)
-            possible_option = L[0:last_index]
-            # print(last_index, possible_option)
+        possible_length = total - 1
+        length = 0
+        while length < total - 1:
+            length = numbers.index(numbers[0], length + 1)
+            possible_option = numbers[0:length]
+            # print(length, possible_option)
 
-            if (len(L) - 1) % len(possible_option) != 0:
+            if (total - 1) % length != 0:
                 continue
 
-            # magic:
-            temp = L[:-1]
-            while temp:
-                if possible_option != temp[0:len(possible_option)]:
-                    break
-                del temp[0:len(possible_option)]
-            if not temp:
-                print(len(possible_option))
-                g.write(str(len(possible_option)))
+            if check(possible_option, numbers[length:total - 1]):
+                possible_length = length
                 break
+
+        print(possible_length)
+        g.write(str(possible_length))
+
+print("--- %s seconds ---" % "{:.2f}".format(time.time() - start_time))

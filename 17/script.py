@@ -1,7 +1,6 @@
 # case 1: one circle
 # case 2: several circles
 
-
 with open("input.txt", "r") as f:
     with open("output.txt", "w") as o:
         total_length = int(f.readline())
