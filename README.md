@@ -39,3 +39,5 @@ One integer variable from/to console:
 a = int(input())
 print(a)
 ```
+
+test
